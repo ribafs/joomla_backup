@@ -1,0 +1,7 @@
+Como foi criado este componente:
+
+- Objetivos e características
+- Funções
+- Adaptação ao Joomla
+- Código e arquivos
+
