@@ -27,7 +27,7 @@ if(!defined('DS')){
 	define('DS',DIRECTORY_SEPARATOR);
 }
 
-$date = date("d-m-Y_H-m");
+$date = date("d-m-Y_H-i-s");
 if(!file_exists(JPATH_SITE.DS.'backup')){
 	$back = mkdir(JPATH_SITE.DS.'backup', 0755);
 }
