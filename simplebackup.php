@@ -37,7 +37,7 @@ $db_file = JURI::root().'backup'.DS.$database.'_'.$date.'.sql';
 // backup all tables in db
 function backup_tables($dbhost,$dbuser,$dbpass,$database,$db_file)
 {
-		$date = date("d-m-Y_H-m");
+		$date = date("d-m-Y_H-i-s");
 
         //connect to db
         $link = mysqli_connect($dbhost,$dbuser,$dbpass);
