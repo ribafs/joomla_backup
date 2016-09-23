@@ -27,7 +27,7 @@ if(!defined('DS')){
 	define('DS',DIRECTORY_SEPARATOR);
 }
 
-$date = date("d-m-Y_H-i-s");
+$date = date("Y-m-d_H-i-s");
 if(!file_exists(JPATH_SITE.DS.'backup')){
 	$back = mkdir(JPATH_SITE.DS.'backup', 0755);
 }
@@ -37,7 +37,7 @@ $db_file = JURI::root().'backup'.DS.$database.'_'.$date.'.sql';
 // backup all tables in db
 function backup_tables($dbhost,$dbuser,$dbpass,$database,$db_file)
 {
-		$date = date("d-m-Y_H-i-s");
+		$date = date("Y-m-d_H-i-s");
 
         //connect to db
         $link = mysqli_connect($dbhost,$dbuser,$dbpass);
