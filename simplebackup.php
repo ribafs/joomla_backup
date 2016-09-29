@@ -37,7 +37,7 @@ $db_file = JURI::root().'backup'.DS.$database.'_'.$date.'.sql';
 // backup all tables in db
 function backup_tables($dbhost,$dbuser,$dbpass,$database,$db_file)
 {
-		$date = date("Y-m-d_H-i-s");
+	$date = date("Y-m-d_H-i-s");
 
         //connect to db
         $link = mysqli_connect($dbhost,$dbuser,$dbpass);
@@ -128,10 +128,6 @@ ini_set('max_execution_time', 480); // Pode ser '120'
 
 <h1><?php print JText::_('COM_SIMPLEBACKUP_FILES_DATABASE');?></h1>
 <form action="" method="post" name="adminForm" id="adminForm">
-	<strong><?php print JText::_('COM_SIMPLEBACKUP_BYPASS');?></strong><br><br>
-	<input type="text" name="bypass1" value="backup"><br>
-	<input type="text" name="bypass2" value="download"><br>
-	<input type="text" name="bypass3" value=""><br>
 	<input type="submit" name="send" value="<?php print JText::_('COM_SIMPLEBACKUP_SEND');?>">
 </form>
 
@@ -188,14 +184,7 @@ function Zip($source, $destination, $bypass1, $bypass2, $bypass3)
 
         foreach ($files as $file){
             $file = str_replace('\\', '/', realpath($file));
-
-            if (is_dir($file) === true){
-				if(($file == $bypass1) || ($file == $bypass2) || ($file == $bypass3)){
-					return false;
-				}else{
-	                $zip->addEmptyDir(str_replace($source . '/', '', $file . '/'));
-				}
-            }else if (is_file($file) === true){
+            if (is_file($file) === true){
                	$zip->addFromString(str_replace($source . '/', '', $file), file_get_contents($file));
             }
         }
