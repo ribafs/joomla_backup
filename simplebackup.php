@@ -128,8 +128,6 @@ ini_set('max_execution_time', 480); // Pode ser '120'
 
 <h1><?php print JText::_('COM_SIMPLEBACKUP_FILES_DATABASE');?></h1>
 <form action="" method="post" name="adminForm" id="adminForm">
-	<input type="text" name="bypass1" value="folder1"><br>
-	<input type="text" name="bypass2" value=""><br>
 	<input type="submit" name="send" value="<?php print JText::_('COM_SIMPLEBACKUP_SEND');?>">
 </form>
 
@@ -162,8 +160,6 @@ $config = JFactory::getApplication();
 $portal2 = '..'.DS.'backup'.DS.$database. '_'. $date . '.zip';
 
 $backup = JPATH_SITE.DS.'backup';
-$bypass1 = JPATH_SITE.DS.JRequest::getVar('bypass1');
-$bypass2 = JPATH_SITE.DS.JRequest::getVar('bypass2');
 
 if(JRequest::getVar('send')){
 
@@ -171,7 +167,7 @@ if(! is_dir($backup)){
 	mkdir($backup);
 }
 
-function Zip($source, $destination, $backup, $bypass1, $bypass2)
+function Zip($source, $destination, $backup)
 {
     if (!extension_loaded('zip') || !file_exists($source)) {
         return false;
@@ -199,7 +195,7 @@ function Zip($source, $destination, $backup, $bypass1, $bypass2)
             if (is_dir($file) === true){					
                 $zip->addEmptyDir(str_replace($source . '/', '', $file . '/'));
             }else if (is_file($file) === true){
-           		if(dirname($file) == $backup || dirname($file) == $bypass1 || dirname($file) == $bypass2){
+           		if(dirname($file) == $backup){
 					continue;
 				}
                 $zip->addFromString(str_replace($source . '/', '', $file), file_get_contents($file));
@@ -215,7 +211,7 @@ function Zip($source, $destination, $backup, $bypass1, $bypass2)
 	// Crédito: http://stackoverflow.com/questions/1334613/how-to-recursively-zip-a-directory-in-php
 }
 
-Zip("..".DS, $portal2, $backup, $bypass1, $bypass2);
+Zip("..".DS, $portal2, $backup);
 backup_tables($dbhost,$dbuser,$dbpass,$database,$date);
 
 $date = date("Y-m-d_H-i-s");
