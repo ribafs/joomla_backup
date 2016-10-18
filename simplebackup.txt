@@ -1,0 +1,10 @@
+Como foi criado este componente:
+
+- Objetivos e características
+- Funções
+- Adaptação ao Joomla
+- Código e arquivos
+
+Este componente deixa de fora a pasta backup e mais duas escolhidas pelo usuário.
+E deixa uma cópia do backup na pasta backup do servidor.
+
