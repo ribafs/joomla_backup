@@ -152,6 +152,7 @@ remove_ext(JPATH_ROOT.DS.'tmp', 'zip');
 // Pre-Load configuration
 require_once( JPATH_CONFIGURATION.DS.'configuration.php' );
 
+$date = date("Y-m-d_H-i");
 $config = JFactory::getApplication(); 
 $portal2 = '..'.DS.'tmp'.DS.$database. '_'. $date . '.zip';
 
