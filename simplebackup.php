@@ -11,7 +11,9 @@
 
 defined('_JEXEC') or die('Restricted access');
 
-//ini_set('display_errors', 0);
+ini_set('display_errors', 'On');
+error_reporting(E_ALL | E_STRICT);
+
 ini_set('memory_limit', '2024M');
 ini_set('max_execution_time', 1800);
 
