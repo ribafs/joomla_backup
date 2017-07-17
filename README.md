@@ -14,7 +14,7 @@ Simple Backup to CMS Joomla 2.5 and 3.x
 
 **Em português** and **In English**
 
-http://ribafs.org/portal/cms-joomla/extensoes/simplebackup
+http://ribafs.org/portal/joomla-3/extensoes/99-minhas-extensoes
 
 
 License
