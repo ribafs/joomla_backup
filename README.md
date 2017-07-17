@@ -10,7 +10,7 @@ Simple Backup to CMS Joomla 2.5 and 3.x
     Translated to portuguese and english
 
 
-# Documentação Em português
+## Documentação Em português
 
 http://ribafs.org/portal/joomla-3/extensoes/99-minhas-extensoes
 
