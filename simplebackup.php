@@ -16,6 +16,7 @@ error_reporting(E_ALL | E_STRICT);
 
 ini_set('memory_limit', '2024M');
 ini_set('max_execution_time', 1800);
+ini_set('display_errors', 0);
 
 jimport('joomla.filesystem.archive');
 jimport('joomla.filesystem.file');
@@ -117,11 +118,6 @@ function backup_tables($dbhost,$dbuser,$dbpass,$database,$date)
 // Créditos: http://stackoverflow.com/questions/81934/easy-way-to-export-a-sql-table-without-access-to-the-server-or-phpmyadmin
 
 // \Backup dpo Banco
-
-// Change php.ini directives
-ini_set('display_errors', 0);
-ini_set('memory_limit', '512M');
-ini_set('max_execution_time', 480); // Pode ser '120'
 ?>
 
 <h1><?php print JText::_('COM_SIMPLEBACKUP_FILES_DATABASE');?></h1>
