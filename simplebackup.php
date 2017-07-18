@@ -16,7 +16,6 @@ error_reporting(E_ALL | E_STRICT);
 
 ini_set('memory_limit', '2024M');
 ini_set('max_execution_time', 1800);
-ini_set('display_errors', 0);
 
 jimport('joomla.filesystem.archive');
 jimport('joomla.filesystem.file');
