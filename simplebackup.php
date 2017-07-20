@@ -21,6 +21,8 @@ jimport('joomla.filesystem.archive');
 jimport('joomla.filesystem.file');
 jimport('joomla.filesystem.folder');
 
+$site_dir = basename(JPATH_SITE);
+
 // Backup do banco
 $config = JFactory::getApplication(); 
 
@@ -104,9 +106,11 @@ function backup_tables($dbhost,$dbuser,$dbpass,$database,$date)
         $return .= 'SET FOREIGN_KEY_CHECKS=1;' . "\r\n";
         $return.= 'COMMIT;';
 
-		$date = date("Y-m-d_H-i");
+	$date = date("Y-m-d_H-i");
         //save file
-		$db = JPATH_SITE.DS.'tmp'.DS.$database.'_'.$date.'.sql';
+	$site_dir = basename(JPATH_SITE);
+	//$db = JPATH_SITE.DS.'tmp'.DS.$database.'_'.$date.'.sql';
+	$db = JPATH_SITE.DS.'tmp'.DS.$site_dir.'_'.$date.'.sql';
 
         $handle = fopen($db,'w+');
         fwrite($handle,$return);
@@ -151,7 +155,8 @@ require_once( JPATH_CONFIGURATION.DS.'configuration.php' );
 
 $date = date("Y-m-d_H-i");
 $config = JFactory::getApplication(); 
-$portal2 = '..'.DS.'tmp'.DS.$database. '_'. $date . '.zip';
+//$portal2 = '..'.DS.'tmp'.DS.$database. '_'. $date . '.zip';
+$portal2 = '..'.DS.'tmp'.DS.$site_dir. '_'. $date . '.zip';
 
 if(JRequest::getVar('send')){
 
@@ -200,7 +205,8 @@ Zip("..".DS, $portal2);
 backup_tables($dbhost,$dbuser,$dbpass,$database,$date);
 
 $date = date("Y-m-d_H-i");
-$db_file = JURI::root().'tmp'.DS.$database.'_'.$date.'.sql';	
+//$db_file = JURI::root().'tmp'.DS.$database.'_'.$date.'.sql';	
+$db_file = JURI::root().'tmp'.DS.$site_dir.'_'.$date.'.sql';			
 
 JFactory::getApplication()->enqueueMessage( JText::_('COM_SIMPLEBACKUP_SUCCESS'),'message');
 ?>
