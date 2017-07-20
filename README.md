@@ -11,8 +11,9 @@ Simple Backup to CMS Joomla 2.5 and 3.x
 
 
 ## Documentação Em português
-
 http://ribafs.org/portal/joomla-3/extensoes/99-minhas-extensoes
+
+Configurado para suportar até 2GB. Caso seu site compactado resulte em mais de 2GB você pode ajustar o ini_set no simplebackup.php para um valor que suporte seu site.
 
 
 License
