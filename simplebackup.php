@@ -125,7 +125,7 @@ JToolBarHelper::title( JText::_( 'COM_SIMPLEBACKUP_FILES_DATABASE' ), 'addedit.p
 ?>
 
 <form action="" method="post" name="adminForm" id="adminForm">
-	<input type="submit" name="send" value="<?php print JText::_('COM_SIMPLEBACKUP_SEND');?>">
+	<input type="submit" name="send" class="btn btn-primary" value="<?php print JText::_('COM_SIMPLEBACKUP_SEND');?>">
 </form>
 
 <?php
