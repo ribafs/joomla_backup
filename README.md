@@ -15,6 +15,8 @@ http://ribafs.org/portal/joomla-3/extensoes/99-minhas-extensoes
 
 Configurado para suportar sites com até 5GB compactados. Caso seu site compactado resulte em mais de 5GB você pode ajustar o ini_set no simplebackup.php para um valor que suporte seu site.
 
+## Instalação
+https://github.com/ribafs/com_simplebackup
 
 License
 -------
