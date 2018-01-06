@@ -14,9 +14,9 @@ defined('_JEXEC') or die('Restricted access');
 ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
 
-ini_set('memory_limit', '5060M');
-ini_set('max_execution_time', 3600);
-ini_set("date.timezone", "America/Fortaleza");
+ini_set('memory_limit', '-1');
+ini_set('max_execution_time', '-1');
+//ini_set("date.timezone", "America/Fortaleza");
 
 jimport('joomla.filesystem.archive');
 jimport('joomla.filesystem.file');
