@@ -14,15 +14,15 @@ defined('_JEXEC') or die('Restricted access');
 ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
 
-ini_set('memory_limit', '-1');
-ini_set('max_execution_time', '-1');
-//ini_set("date.timezone", "America/Fortaleza");
+ini_set('memory_limit', '5060M');
+ini_set('max_execution_time', 3600);
+ini_set("date.timezone", "America/Fortaleza");
 
 jimport('joomla.filesystem.archive');
 jimport('joomla.filesystem.file');
 jimport('joomla.filesystem.folder');
 
-$site_dir = basename(JPATH_SITE);
+//$site_dir = basename(JPATH_SITE);
 
 // Backup do banco
 $config = JFactory::getApplication(); 
@@ -108,9 +108,10 @@ function backup_tables($dbhost,$dbuser,$dbpass,$database,$date)
         $return.= 'COMMIT;';
 
     	$date = date("Y-m-d_H-i");
-    	$site_dir = basename(JPATH_SITE);
+    	//$site_dir = basename(JPATH_SITE);
 
-    	$db = JPATH_SITE.DS.'tmp'.DS.$site_dir.'_'.$date.'.sql';
+    	//$db = JPATH_SITE.DS.'tmp'.DS.$site_dir.'_'.$date.'.sql';
+        $db = JPATH_SITE.DS.'tmp'.DS.$database.'_'.$date.'.sql';
 
         $handle = fopen($db,'w+');
         fwrite($handle,$return);
@@ -155,8 +156,8 @@ require_once( JPATH_CONFIGURATION.DS.'configuration.php' );
 
 $date = date("Y-m-d_H-i");
 $config = JFactory::getApplication(); 
-//$portal2 = '..'.DS.'tmp'.DS.$database. '_'. $date . '.zip';
-$portal2 = '..'.DS.'tmp'.DS.$site_dir. '_'. $date . '.zip';
+//$portal2 = '..'.DS.'tmp'.DS.$site_dir. '_'. $date . '.zip';
+$portal2 = '..'.DS.'tmp'.DS.$database. '_'. $date . '.zip';
 
 if(JRequest::getVar('send')){
 
@@ -205,7 +206,8 @@ Zip("..".DS, $portal2);
 backup_tables($dbhost,$dbuser,$dbpass,$database,$date);
 
 $date = date("Y-m-d_H-i");
-$db_file = JURI::root().'tmp'.DS.$site_dir.'_'.$date.'.sql';			
+//$db_file = JURI::root().'tmp'.DS.$site_dir.'_'.$date.'.sql';
+$db_file = JURI::root().'tmp'.DS.$database.'_'.$date.'.sql';						
 
 JFactory::getApplication()->enqueueMessage( JText::_('COM_SIMPLEBACKUP_SUCCESS'),'message');
 ?>
