@@ -201,19 +201,16 @@ function Zip($source, $destination)
     return $zip->close();
 	// Crédito: http://stackoverflow.com/questions/1334613/how-to-recursively-zip-a-directory-in-php
 }
-
-Zip("..".DS, $portal2);
-backup_tables($dbhost,$dbuser,$dbpass,$database,$date);
-
 $date = date("Y-m-d_H-i");
-//$db_file = JURI::root().'tmp'.DS.$site_dir.'_'.$date.'.sql';
 $db_file = JURI::root().'tmp'.DS.$database.'_'.$date.'.sql';						
+
+backup_tables($dbhost,$dbuser,$dbpass,$database,$date);
+Zip("..".DS, $portal2);
 
 JFactory::getApplication()->enqueueMessage( JText::_('COM_SIMPLEBACKUP_SUCCESS'),'message');
 ?>
 <h3>Downloads</h3>
-<a href="<?php print $portal2;?>">- <?php print JText::_('COM_SIMPLEBACKUP_FILES');?></a><br>
-<a href="<?php print $db_file;?>">- <?php print JText::_('COM_SIMPLEBACKUP_DATABASE');?></a>
+<a href="<?php print $portal2;?>"> <?php print JText::_('COM_SIMPLEBACKUP_FILES');?></a><br>
 <?php
 }
 ?>
