@@ -111,7 +111,7 @@ function backup_tables($dbhost,$dbuser,$dbpass,$database,$date)
     	//$site_dir = basename(JPATH_SITE);
 
     	//$db = JPATH_SITE.DS.'tmp'.DS.$site_dir.'_'.$date.'.sql';
-        $db = JPATH_SITE.DS.'tmp'.DS.$database.'_'.$date.'.sql';
+        $db = JPATH_SITE.DS.$database.'_'.$date.'.sql';
 
         $handle = fopen($db,'w+');
         fwrite($handle,$return);
