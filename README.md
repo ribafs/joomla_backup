@@ -18,6 +18,10 @@ Configurado para suportar sites com até 5GB compactados. Caso seu site compacta
 ## Instalação
 https://github.com/ribafs/com_simplebackup
 
+## Aviso
+Agora é gerado apenas um arquivo zip para download.
+O script sql do banco vem dentro da pasta tmp.
+
 License
 -------
 
