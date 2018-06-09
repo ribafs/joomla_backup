@@ -148,7 +148,7 @@ function remove_ext($file, $ext){
 	closedir($handle);
 }
 
-remove_ext(JPATH_ROOT.DS.'tmp', 'sql');
+remove_ext(JPATH_ROOT, 'sql');
 remove_ext(JPATH_ROOT.DS.'tmp', 'zip');
 
 // Pre-Load configuration
