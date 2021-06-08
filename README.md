@@ -1,8 +1,8 @@
 # Simple Backup to CMS Joomla 4
 
-## VErsão compatível com o Joomla 2.5 e 3.x
+## A versão compatível com o Joomla 2.5 e 3.x é o Release 1..16
 
-
+https://github.com/ribafs/com_simplebackup/archive/refs/tags/v1.16.zip
 
 [![Licença](https://img.shields.io/aur/license/yaourt.svg)](https://github.com/ribafs/simplebackup/blob/master/LICENSE)
 
