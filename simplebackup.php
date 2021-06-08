@@ -159,7 +159,8 @@ $config = JFactory::getApplication();
 //$portal2 = '..'.DS.'tmp'.DS.$site_dir. '_'. $date . '.zip';
 $portal2 = '..'.DS.'tmp'.DS.$database. '_'. $date . '.zip';
 
-if(JRequest::getVar('send')){
+if(JFactory::getApplication()->input->post->get('send')){
+//if(JRequest::getVar('send')){
 
 function Zip($source, $destination)
 {
