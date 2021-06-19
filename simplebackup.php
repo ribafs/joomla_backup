@@ -160,7 +160,7 @@ $config = JFactory::getApplication();
 $portal2 = '..'.DS.'tmp'.DS.$database. '_'. $date . '.zip';
 
 if(JFactory::getApplication()->input->post->get('send')){
-//if(JRequest::getVar('send')){
+//if(JRequest::getVar('send')){ // A classe JRequest não mais é suportada na versão 4 do Joomla
 
 function Zip($source, $destination)
 {
