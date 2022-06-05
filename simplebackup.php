@@ -109,7 +109,7 @@ function backup_tables($dbhost,$dbuser,$dbpass,$database,$date)
         $return.= 'COMMIT;';
 
     	$date = date("Y-m-d_H-i");
-    	//$site_dir = basename(JPATH_SITE);
+    	$site_dir = basename(JPATH_SITE);
 
     	//$db = JPATH_SITE.DS.'tmp'.DS.$site_dir.'_'.$date.'.sql';
         $db = JPATH_SITE.DS.$database.'_'.$date.'.sql';
@@ -157,8 +157,8 @@ require_once( JPATH_CONFIGURATION.DS.'configuration.php' );
 
 $date = date("Y-m-d_H-i");
 $config = JFactory::getApplication(); 
-//$portal2 = '..'.DS.'tmp'.DS.$site_dir. '_'. $date . '.zip';
-$portal2 = '..'.DS.'tmp'.DS.$database. '_'. $date . '.zip';
+$portal2 = '..'.DS.'tmp'.DS.$site_dir. '_'. $date . '.zip';
+//$portal2 = '..'.DS.'tmp'.DS.$database. '_'. $date . '.zip';
 
 if(JFactory::getApplication()->input->post->get('send')){
 //if(JRequest::getVar('send')){ // A classe JRequest não mais é suportada na versão 4 do Joomla
