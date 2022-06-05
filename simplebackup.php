@@ -22,7 +22,7 @@ jimport('joomla.filesystem.archive');
 jimport('joomla.filesystem.file');
 jimport('joomla.filesystem.folder');
 
-//$site_dir = basename(JPATH_SITE);
+$site_dir = basename(JPATH_SITE);
 
 // Backup do banco
 $config = JFactory::getApplication(); 
@@ -108,8 +108,7 @@ function backup_tables($dbhost,$dbuser,$dbpass,$database,$date)
         $return .= 'SET FOREIGN_KEY_CHECKS=1;' . "\r\n";
         $return.= 'COMMIT;';
 
-    	$date = date("Y-m-d_H-i");
-    	$site_dir = basename(JPATH_SITE);
+    	$date = date("Y-m-d_H-i");    	
 
     	//$db = JPATH_SITE.DS.'tmp'.DS.$site_dir.'_'.$date.'.sql';
         $db = JPATH_SITE.DS.$database.'_'.$date.'.sql';
