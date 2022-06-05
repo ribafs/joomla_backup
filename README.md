@@ -1,6 +1,6 @@
 # Simple Backup to CMS Joomla
 
-## Compatível com as versões 2.5 e 3.x do Joomla
+## Compatível com as versões 2.5, 3.x e 4.x do Joomla
 
 [![Licença](https://img.shields.io/aur/license/yaourt.svg)](https://github.com/ribafs/simplebackup/blob/master/LICENSE)
 
