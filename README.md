@@ -14,7 +14,9 @@
 https://github.com/ribafs/com_simplebackup
 
 ## Resultado
-Gerado apenas um arquivo zip para download, contem o script sql do banco.
+Gerado um arquivo zip e um sql para download a pasta
+
+administrator/components/com_simplebackup/backups
 
 License
 -------
